@@ -1,6 +1,7 @@
-import "@/App.css";
-import LofiRoom from "@/pages/LofiRoom";
-import { Toaster } from "@/components/ui/sonner";
+import "./App.css";
+import LofiRoom from "./pages/LofiRoom";
+import { Toaster } from "./components/ui/sonner";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
           <Route path="/" element={<LofiRoom />} />
         </Routes>
       </BrowserRouter>
+
       <Toaster position="top-center" />
     </div>
   );
