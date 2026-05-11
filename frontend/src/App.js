@@ -1,5 +1,4 @@
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LofiRoom from "@/pages/LofiRoom";
 import { Toaster } from "@/components/ui/sonner";
 
