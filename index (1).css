@@ -1,0 +1,275 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* Day theme — warm afternoon glow */
+    --bg: #fdfbf7;
+    --wall: #e8d5b5;
+    --wall-2: #d9c19a;
+    --wood-light: #c49a6c;
+    --wood-dark: #8b5a2b;
+    --wood-espresso: #5c3a21;
+    --terracotta: #a0522d;
+    --plant: #6b8e23;
+    --pixel: #d2a679;
+    --text: #4a3b2c;
+    --text-soft: #6b5640;
+    --surface: rgba(253, 251, 247, 0.55);
+    --surface-strong: rgba(253, 251, 247, 0.75);
+    --border-c: rgba(139, 90, 43, 0.18);
+    --shadow: 0 8px 32px rgba(139, 90, 43, 0.18);
+    --window-sky: #b9d4e3;
+    --window-sky-2: #e8d3a8;
+    --fire: #ff7a2a;
+    --fire-2: #ffd166;
+
+    /* shadcn vars (kept for compat) */
+    --background: 36 50% 97%;
+    --foreground: 28 28% 23%;
+    --card: 36 50% 97%;
+    --card-foreground: 28 28% 23%;
+    --popover: 36 50% 97%;
+    --popover-foreground: 28 28% 23%;
+    --primary: 25 52% 36%;
+    --primary-foreground: 36 50% 97%;
+    --secondary: 33 39% 81%;
+    --secondary-foreground: 28 28% 23%;
+    --muted: 33 39% 81%;
+    --muted-foreground: 28 18% 38%;
+    --accent: 25 64% 40%;
+    --accent-foreground: 36 50% 97%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 36 50% 97%;
+    --border: 28 28% 78%;
+    --input: 28 28% 78%;
+    --ring: 25 52% 36%;
+    --radius: 0.85rem;
+}
+
+[data-mode="night"] {
+    --bg: #1a1412;
+    --wall: #2c241b;
+    --wall-2: #221a13;
+    --wood-light: #4a3b2c;
+    --wood-dark: #2a1b12;
+    --wood-espresso: #150c07;
+    --terracotta: #6e3a1e;
+    --plant: #3d5214;
+    --pixel: #8c6a4d;
+    --text: #ead6b8;
+    --text-soft: #b7a181;
+    --surface: rgba(44, 36, 27, 0.55);
+    --surface-strong: rgba(44, 36, 27, 0.78);
+    --border-c: rgba(216, 195, 165, 0.16);
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+    --window-sky: #1d2742;
+    --window-sky-2: #0c1224;
+    --fire: #ff8a3c;
+    --fire-2: #ffc06b;
+
+    --background: 24 18% 9%;
+    --foreground: 36 50% 88%;
+    --card: 24 18% 9%;
+    --card-foreground: 36 50% 88%;
+    --popover: 24 18% 9%;
+    --popover-foreground: 36 50% 88%;
+    --primary: 36 38% 78%;
+    --primary-foreground: 24 18% 9%;
+    --secondary: 26 20% 22%;
+    --secondary-foreground: 36 50% 88%;
+    --muted: 26 20% 22%;
+    --muted-foreground: 36 24% 70%;
+    --accent: 22 60% 45%;
+    --accent-foreground: 36 50% 88%;
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 36 50% 88%;
+    --border: 26 20% 24%;
+    --input: 26 20% 24%;
+    --ring: 36 38% 78%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: "Quicksand", system-ui, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    overflow: hidden;
+    transition:
+        background-color 1s ease,
+        color 1s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.font-handwritten {
+    font-family: "Caveat", cursive;
+    letter-spacing: 0.5px;
+}
+.font-pixel {
+    font-family: "VT323", monospace;
+    letter-spacing: 1px;
+}
+
+/* Cozy floating widget surface */
+.cozy-card {
+    background: var(--surface-strong);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid var(--border-c);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    color: var(--text);
+}
+
+.cozy-divider {
+    border-color: var(--border-c);
+}
+
+.btn-warm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.95rem;
+    border-radius: 999px;
+    font-weight: 600;
+    background: var(--wood-dark);
+    color: #fdfbf7;
+    transition:
+        transform 0.18s ease,
+        background-color 0.18s ease,
+        box-shadow 0.18s ease;
+    box-shadow: 0 4px 14px rgba(139, 90, 43, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.btn-warm:hover {
+    background: var(--wood-espresso);
+}
+.btn-warm:active {
+    transform: scale(0.96);
+}
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border-c);
+    transition: all 0.18s ease;
+}
+.btn-ghost:hover {
+    background: var(--surface);
+}
+
+/* Custom slider */
+input[type="range"].cozy-range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background: transparent;
+    height: 22px;
+    cursor: pointer;
+}
+input[type="range"].cozy-range::-webkit-slider-runnable-track {
+    height: 4px;
+    border-radius: 999px;
+    background: var(--wood-light);
+    opacity: 0.8;
+}
+input[type="range"].cozy-range::-moz-range-track {
+    height: 4px;
+    border-radius: 999px;
+    background: var(--wood-light);
+}
+input[type="range"].cozy-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    margin-top: -6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+    border: 2px solid var(--bg);
+    transition: transform 0.15s ease;
+}
+input[type="range"].cozy-range::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+}
+input[type="range"].cozy-range::-moz-range-thumb {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    border: 2px solid var(--bg);
+}
+
+/* Scrollbar inside widgets */
+.cozy-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+.cozy-scroll::-webkit-scrollbar-thumb {
+    background: var(--wood-light);
+    border-radius: 999px;
+    opacity: 0.4;
+}
+.cozy-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Selection */
+::selection {
+    background: var(--terracotta);
+    color: #fff8ec;
+}
+
+/* Pixel-rendering helper */
+.pixelated {
+    image-rendering: pixelated;
+    shape-rendering: crispEdges;
+}
+
+/* Vignette */
+.vignette::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+        ellipse at center,
+        transparent 55%,
+        rgba(0, 0, 0, 0.35) 100%
+    );
+    transition: opacity 1s ease;
+}
+[data-mode="night"] .vignette::after {
+    background: radial-gradient(
+        ellipse at center,
+        transparent 40%,
+        rgba(0, 0, 0, 0.6) 100%
+    );
+}
+
+/* Grain overlay */
+.grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.27 0 0 0 0 0.18 0 0 0 0.7 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
