@@ -1,12 +1,12 @@
 import { useState, useEffect, useCallback } from "react";
 import { Timer, Music2, Sliders, ListTodo } from "lucide-react";
-import RoomScene from "@/components/RoomScene";
-import PomodoroTimer from "@/components/PomodoroTimer";
-import MusicPlayer from "@/components/MusicPlayer";
-import AmbientMixer from "@/components/AmbientMixer";
-import TodoList from "@/components/TodoList";
-import DayNightToggle from "@/components/DayNightToggle";
-import CollapsiblePanel from "@/components/CollapsiblePanel";
+import RoomScene from "../components/RoomScene";
+import PomodoroTimer from "../components/PomodoroTimer";
+import MusicPlayer from "../components/MusicPlayer";
+import AmbientMixer from "../components/AmbientMixer";
+import TodoList from "../components/TodoList";
+import DayNightToggle from "../components/DayNightToggle";
+import CollapsiblePanel from "../components/CollapsiblePanel";
 
 export default function LofiRoom() {
   const [mode, setMode] = useState("day");
